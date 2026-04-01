@@ -10,7 +10,7 @@ export default function AboutModal() {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="text-sm text-gray-500 font-bold hover:text-gray-900 transition-colors"
+        className="text-sm text-gray-500 font-bold hover:text-gray-900 transition-colors cursor-pointer"
       >
         About
       </button>
