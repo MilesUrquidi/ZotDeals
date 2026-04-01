@@ -48,7 +48,7 @@ export default function Dashboard({ resources }: { resources: Resource[] }) {
         active={activeFilter}
         onChange={setActiveFilter}
       />
-      <ResourceTable resources={filtered} />
+      <ResourceTable resources={filtered} filterKey={activeFilter} />
     </div>
   );
 }

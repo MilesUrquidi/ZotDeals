@@ -1,10 +1,15 @@
+'use client'
+
+import { motion, AnimatePresence } from 'framer-motion'
 import { Resource } from "@/lib/supabase";
 import ResourceRow from "./ResourceRow";
 
 export default function ResourceTable({
   resources,
+  filterKey,
 }: {
-  resources: Resource[];
+  resources: Resource[]
+  filterKey: string
 }) {
   if (resources.length === 0) {
     return (
@@ -13,10 +18,18 @@ export default function ResourceTable({
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      {resources.map((resource) => (
-        <ResourceRow key={resource.id} resource={resource} />
-      ))}
-    </div>
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={filterKey}
+        initial={{ opacity: 0, y: 18 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type: 'spring', stiffness: 380, damping: 14 }}
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+      >
+        {resources.map((resource) => (
+          <ResourceRow key={resource.id} resource={resource} />
+        ))}
+      </motion.div>
+    </AnimatePresence>
   );
 }

@@ -1,6 +1,16 @@
 import { Resource } from '@/lib/supabase'
 import { ExternalLink } from 'lucide-react'
 
+function getLogoUrl(resource: Resource): string | null {
+  if (resource.logo_url) return resource.logo_url
+  try {
+    const domain = new URL(resource.url).hostname.replace('www.', '')
+    return `https://www.google.com/s2/favicons?domain=${domain}&sz=128`
+  } catch {
+    return null
+  }
+}
+
 function LogoPlaceholder({ name }: { name: string }) {
   return (
     <div className="w-11 h-11 rounded-xl bg-[#23c3ea] flex items-center justify-center shrink-0">
@@ -11,17 +21,19 @@ function LogoPlaceholder({ name }: { name: string }) {
 
 export default function ResourceRow({ resource }: { resource: Resource }) {
   const isFree = resource.value.toLowerCase() === 'free'
+  const logoUrl = getLogoUrl(resource)
 
   return (
     <div className="bg-white border border-gray-200 rounded-2xl p-5 hover:border-gray-300 hover:shadow-sm transition-all flex flex-col gap-3 min-h-[160px]">
 
       {/* Header: logo + name */}
       <div className="flex items-center gap-3">
-        {resource.logo_url ? (
+        {logoUrl ? (
           <img
-            src={resource.logo_url}
+            src={logoUrl}
             alt={resource.name}
-            className="w-11 h-11 rounded-xl object-contain border border-gray-100 bg-white"
+            className="w-11 h-11 rounded-xl object-contain border border-gray-100 bg-white p-1"
+            onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
           />
         ) : (
           <LogoPlaceholder name={resource.name} />
