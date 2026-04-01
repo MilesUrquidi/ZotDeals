@@ -32,5 +32,30 @@ A directory of free and discounted perks for UCI students. Next.js + Supabase + 
 - Email digest (stretch feature)
 - Complex animations or transitions
 
+## Design rules
+- Clean, modern, sleek — lots of whitespace.
+- All-white page background. Light gray (`#F4F4F4`) for card fills and section backgrounds.
+- NOT UCI-branded. No navy/gold.
+
+### Color palette
+- Deep teal: `#005461` — primary accents, dark buttons, heavy text accents
+- Mid teal: `#018790` — hover states
+- Bright teal: `#00B7B5` — highlights, active filter pills, "Free" badge
+- Light gray: `#F4F4F4` — card backgrounds, section fills
+- Body text: `#111827`, secondary: `#6b7280`, borders: `#e5e7eb`
+
+### Cards
+- Resource cards have an image/logo header area
+- If `logo_url` exists: show the logo image
+- If no logo: show a teal gradient header with the first letter of the perk name
+- Below header: name, value, description, tags, CTA link button
+
+### Buttons & badges
+- Primary button: `bg-[#005461] text-white hover:bg-[#018790]`
+- Free badge: bright teal (`#00B7B5`) pill
+- UCI-Exclusive badge: deep teal (`#005461`) pill, white text
+- NEW badge: green pill
+- Spacing is a design element — use it generously.
+
 ## Reminder
 This is a content site. The complexity is in the data, not the code. Keep the code boring.

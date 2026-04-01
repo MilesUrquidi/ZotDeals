@@ -1,39 +1,67 @@
 import { Resource } from '@/lib/supabase'
+import { ExternalLink } from 'lucide-react'
+
+function LogoPlaceholder({ name }: { name: string }) {
+  return (
+    <div className="w-11 h-11 rounded-xl bg-[#005461] flex items-center justify-center shrink-0">
+      <span className="text-white font-bold text-base">{name[0]}</span>
+    </div>
+  )
+}
 
 export default function ResourceRow({ resource }: { resource: Resource }) {
   const isFree = resource.value.toLowerCase() === 'free'
 
   return (
-    <tr className="hover:bg-gray-50 transition-colors">
-      <td className="px-4 py-4">
-        <div className="flex items-center gap-2 flex-wrap">
-          <span className="font-medium text-gray-900">{resource.name}</span>
-          {resource.is_new && (
-            <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-green-100 text-green-700">NEW</span>
-          )}
+    <div className="bg-white border border-gray-200 rounded-2xl p-5 hover:border-gray-300 hover:shadow-sm transition-all flex flex-col gap-3 min-h-[160px]">
+
+      {/* Header: logo + name */}
+      <div className="flex items-center gap-3">
+        {resource.logo_url ? (
+          <img
+            src={resource.logo_url}
+            alt={resource.name}
+            className="w-11 h-11 rounded-xl object-contain border border-gray-100 bg-white"
+          />
+        ) : (
+          <LogoPlaceholder name={resource.name} />
+        )}
+        <div className="min-w-0">
+          <div className="flex items-center gap-2 flex-wrap">
+            <h3 className="font-semibold text-gray-900 text-base leading-tight">{resource.name}</h3>
+            {resource.is_new && (
+              <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-green-100 text-green-700">NEW</span>
+            )}
+          </div>
           {resource.eligibility === 'uci-only' && (
-            <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#FFD200] text-gray-900">UCI-Only</span>
+            <span className="text-xs font-medium text-[#018790]">UCI-Only</span>
           )}
         </div>
-      </td>
-      <td className="px-4 py-4">
-        <span className={`font-medium ${isFree ? 'text-green-600' : 'text-gray-700'}`}>
+      </div>
+
+      {/* Description */}
+      <p className="text-sm text-gray-500 line-clamp-2 flex-1 leading-relaxed">
+        {resource.description}
+      </p>
+
+      {/* Footer: value + link */}
+      <div className="flex items-center justify-between pt-1 border-t border-gray-100">
+        <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${
+          isFree
+            ? 'bg-[#00B7B5]/10 text-[#005461]'
+            : 'bg-gray-100 text-gray-600'
+        }`}>
           {resource.value}
         </span>
-      </td>
-      <td className="px-4 py-4 text-gray-500 hidden md:table-cell max-w-sm">
-        {resource.description}
-      </td>
-      <td className="px-4 py-4 text-right">
         <a
           href={resource.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block px-3 py-1.5 rounded-md bg-gray-900 text-white text-xs font-medium hover:bg-gray-700 transition-colors"
+          className="flex items-center gap-1 text-xs font-semibold text-[#005461] hover:text-[#018790] transition-colors"
         >
-          Get it
+          Get it <ExternalLink className="w-3 h-3" />
         </a>
-      </td>
-    </tr>
+      </div>
+    </div>
   )
 }
