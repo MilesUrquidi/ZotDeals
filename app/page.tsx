@@ -35,7 +35,7 @@ export default async function Home() {
 
       {/* Dashboard container */}
       <FadeIn delay={0.35} className="max-w-6xl mx-auto px-3 sm:px-6 pb-20">
-        <div className="bg-[#F4F4F4] rounded-2xl sm:rounded-3xl p-3 sm:p-6 shadow-[0_8px_40px_rgba(0,0,0,0.08)]">
+        <div className="rounded-2xl border-4 border-neutral-100 bg-[#FAF9F7] p-3 sm:p-8 shadow-2xl shadow-black/25">
           <Dashboard resources={resources} />
         </div>
       </FadeIn>
