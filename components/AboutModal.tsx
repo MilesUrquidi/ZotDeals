@@ -35,11 +35,11 @@ export default function AboutModal() {
               About ZotDeals
             </h2>
             <p className="text-gray-600 leading-relaxed mb-6">
-              Hey UCI students! Most people don't realize how much their{" "}
-              <span className="font-medium text-gray-900">.edu email</span> is
-              actually worth. I built this to fix that — one clean place to find
-              every free tool, discount, and perk available to you as a UCI
-              student.
+              Hey UCI students! Thanks for using my app. Most people don't
+              realize how much their{" "}
+              <span className="font-medium text-[#23c3ea]">.edu email</span> is
+              actually worth. I built this to fix that. One clean place to find
+              every free tool, discount, and perk available to you!
             </p>
 
             <div className="border-t border-gray-100 pt-5 text-sm text-gray-400">
@@ -52,13 +52,15 @@ export default function AboutModal() {
               >
                 Miles
               </a>
-              . Know a perk that's missing?{" "}
-              <button
-                onClick={() => setOpen(false)}
+              . Know a deal that's missing?{" "}
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdJRSRzrb5tulw2ZhsbVppnDlVEFJI0E_t3iPryPtIpDowtyw/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-700 underline underline-offset-2 hover:text-[#23c3ea] transition-colors"
               >
                 Submit it.
-              </button>
+              </a>
             </div>
           </div>
         </div>
