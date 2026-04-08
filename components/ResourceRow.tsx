@@ -66,7 +66,7 @@ export default function ResourceRow({ resource }: { resource: Resource }) {
         <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${
           isFree
             ? 'bg-[#04c0fd]/10 text-[#23c3ea]'
-            : 'bg-gray-100 text-gray-600'
+            : 'bg-amber-50 text-amber-600'
         }`}>
           {resource.value}
         </span>
