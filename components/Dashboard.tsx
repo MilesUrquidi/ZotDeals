@@ -11,12 +11,13 @@ import ShareModal from "./ShareModal";
 
 const FILTERS = [
   { label: "All", value: "all" },
+  { label: "UCI-Only", value: "uci-only" },
   { label: "Entertainment", value: "entertainment" },
   { label: "Productivity", value: "productivity" },
   { label: "Design", value: "design" },
   { label: "Dev Tools", value: "dev-tools" },
   { label: "AI", value: "ai" },
-  { label: "UCI-Only", value: "uci-only" },
+  { label: "Career", value: "career" },
 ];
 
 export default function Dashboard({ resources }: { resources: Resource[] }) {

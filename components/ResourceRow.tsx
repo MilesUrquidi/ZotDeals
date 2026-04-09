@@ -38,7 +38,7 @@ export default function ResourceRow({
         e.preventDefault()
         onCardClick(resource.name, resource.url)
       }}
-      className="bg-white border border-gray-200 rounded-2xl p-5 hover:border-gray-300 hover:shadow-sm transition-all flex flex-col gap-3 min-h-[160px] cursor-pointer"
+      className="group bg-white border border-gray-200 rounded-2xl p-5 hover:border-gray-300 hover:shadow-sm transition-all flex flex-col gap-3 min-h-[160px] cursor-pointer"
     >
 
       {/* Header: logo + name */}
@@ -61,7 +61,7 @@ export default function ResourceRow({
             )}
           </div>
           {resource.eligibility === 'uci-only' && (
-            <span className="text-xs font-medium text-[#3ab8d8]">UCI-Only</span>
+            <span className="text-xs font-medium text-[#3ab8d8] mt-0.5 block">UCI-Only</span>
           )}
         </div>
       </div>
@@ -87,7 +87,7 @@ export default function ResourceRow({
             </span>
           )}
         </div>
-        <span className="flex items-center gap-1 text-xs font-semibold text-[#23c3ea]">
+        <span className="flex items-center gap-1 text-xs font-semibold text-[#23c3ea] group-hover:translate-x-0.5 group-hover:scale-110 transition-all">
           Get it <ExternalLink className="w-3 h-3" />
         </span>
       </div>
