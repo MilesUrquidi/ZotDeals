@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { X } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function AboutModal() {
   const [open, setOpen] = useState(false);
@@ -15,12 +16,21 @@ export default function AboutModal() {
         About
       </button>
 
-      {open && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm"
-          onClick={() => setOpen(false)}
-        >
-          <div
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm"
+            onClick={() => setOpen(false)}
+          >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96, y: 8 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.96, y: 8 }}
+            transition={{ duration: 0.2 }}
             className="bg-white rounded-2xl p-8 max-w-lg w-full shadow-xl relative"
             onClick={(e) => e.stopPropagation()}
           >
@@ -62,9 +72,10 @@ export default function AboutModal() {
                 Submit it.
               </a>
             </div>
-          </div>
-        </div>
-      )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
