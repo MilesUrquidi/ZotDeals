@@ -9,16 +9,15 @@ export default async function Home() {
   return (
     <main className="min-h-screen bg-white">
       {/* Centered hero */}
-      <section className="flex flex-col items-center text-center px-6 pt-12 sm:pt-20 pb-10 sm:pb-14">
+      <section className="flex flex-col items-center text-center px-6 pt-16 sm:pt-28 pb-12 sm:pb-16">
         <FadeIn delay={0}>
-          <h1 className="text-3xl sm:text-5xl font-bold text-gray-900 tracking-tight leading-tight max-w-xl">
+          <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 tracking-tight leading-tight max-w-2xl">
             Everything your UCI email unlocks.
           </h1>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <p className="mt-4 text-gray-400 text-base max-w-md leading-relaxed">
-            Free tools, software, and discounts for UCI students <br /> all in
-            one place.
+          <p className="mt-6 text-gray-400 text-lg max-w-md leading-relaxed">
+            Free tools, software, and discounts for UCI students — all in one place.
           </p>
         </FadeIn>
       </section>
