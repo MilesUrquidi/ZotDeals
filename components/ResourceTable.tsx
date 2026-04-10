@@ -11,7 +11,7 @@ export default function ResourceTable({
 }: {
   resources: Resource[];
   filterKey: string;
-  onCardClick: (name: string, url: string) => void;
+  onCardClick: (id: string, name: string, url: string) => void;
 }) {
   if (resources.length === 0) {
     return (

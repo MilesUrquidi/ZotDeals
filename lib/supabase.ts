@@ -22,6 +22,10 @@ export type Resource = {
   retail_value: string | null
 }
 
+export async function incrementClickCount(id: string) {
+  await supabase.rpc('increment_click_count', { resource_id: id })
+}
+
 export async function addSubscriber(email: string) {
   const { error } = await supabase.from('subscribers').insert({ email })
   if (error && error.code !== '23505') throw error // ignore duplicate emails

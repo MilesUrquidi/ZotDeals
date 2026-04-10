@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Search } from "lucide-react";
 import { AnimatePresence } from "framer-motion";
-import { Resource } from "@/lib/supabase";
+import { Resource, incrementClickCount } from "@/lib/supabase";
 import FiltersBar from "./FiltersBar";
 import ResourceTable from "./ResourceTable";
 import EmailGateModal from "./EmailGateModal";
@@ -53,7 +53,8 @@ export default function Dashboard({ resources }: { resources: Resource[] }) {
     };
   }, []);
 
-  function handleCardClick(name: string, url: string) {
+  function handleCardClick(id: string, name: string, url: string) {
+    incrementClickCount(id);
     const hasEmail = localStorage.getItem("zotdeals_email");
     if (hasEmail) {
       localStorage.setItem("zotdeals_visited_from_deal", "true");

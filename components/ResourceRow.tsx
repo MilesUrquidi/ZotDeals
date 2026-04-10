@@ -24,7 +24,7 @@ export default function ResourceRow({
   onCardClick,
 }: {
   resource: Resource
-  onCardClick: (name: string, url: string) => void
+  onCardClick: (id: string, name: string, url: string) => void
 }) {
   const isFree = resource.value.toLowerCase() === 'free'
   const logoUrl = getLogoUrl(resource)
@@ -36,7 +36,7 @@ export default function ResourceRow({
       rel="noopener noreferrer"
       onClick={(e) => {
         e.preventDefault()
-        onCardClick(resource.name, resource.url)
+        onCardClick(resource.id, resource.name, resource.url)
       }}
       className="group bg-white border border-gray-200 rounded-2xl p-5 hover:border-gray-300 hover:shadow-sm transition-all flex flex-col gap-3 min-h-[160px] cursor-pointer"
     >
