@@ -42,8 +42,15 @@ export default function Dashboard({ resources }: { resources: Resource[] }) {
         setShareModalOpen(true);
       }
     };
+    const handleVisibility = () => {
+      if (document.visibilityState === "visible") handleReturn();
+    };
     window.addEventListener("focus", handleReturn);
-    return () => window.removeEventListener("focus", handleReturn);
+    document.addEventListener("visibilitychange", handleVisibility);
+    return () => {
+      window.removeEventListener("focus", handleReturn);
+      document.removeEventListener("visibilitychange", handleVisibility);
+    };
   }, []);
 
   function handleCardClick(name: string, url: string) {
