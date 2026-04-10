@@ -4,6 +4,8 @@ import { useState } from "react"
 import { X } from "lucide-react"
 import { motion } from "framer-motion"
 import { addSubscriber } from "@/lib/supabase"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
 
 export default function EmailGateModal({
   resourceName,
@@ -67,23 +69,20 @@ export default function EmailGateModal({
           </p>
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-            <input
+            <Input
               type="email"
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm placeholder:text-gray-400 focus:outline-none focus:border-[#04c0fd] transition-colors"
             />
-            <button
+            <Button
               type="submit"
               disabled={loading || !email}
-              className={`w-full py-3 text-white text-sm font-semibold rounded-xl transition-colors disabled:opacity-50 ${
-              email ? 'bg-[#23c3ea] hover:bg-[#3ab8d8]' : 'bg-gray-900 hover:bg-gray-700'
-            }`}
+              className="w-full bg-[#23c3ea] hover:bg-[#3ab8d8] text-white font-semibold"
             >
               {loading ? "One sec..." : "Get Access"}
-            </button>
+            </Button>
           </form>
         </motion.div>
     </motion.div>
