@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Resource } from '@/lib/supabase'
 import { ExternalLink } from 'lucide-react'
 
@@ -26,6 +27,7 @@ export default function ResourceRow({
   resource: Resource
   onCardClick: (id: string, name: string, url: string) => void
 }) {
+  const [imgFailed, setImgFailed] = useState(false)
   const isFree = resource.value.toLowerCase() === 'free'
   const logoUrl = getLogoUrl(resource)
 
@@ -43,12 +45,12 @@ export default function ResourceRow({
 
       {/* Header: logo + name */}
       <div className="flex items-center gap-3">
-        {logoUrl ? (
+        {logoUrl && !imgFailed ? (
           <img
             src={logoUrl}
             alt={resource.name}
             className="w-11 h-11 rounded-xl object-contain border border-gray-100 bg-white p-1"
-            onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
+            onError={() => setImgFailed(true)}
           />
         ) : (
           <LogoPlaceholder name={resource.name} />
