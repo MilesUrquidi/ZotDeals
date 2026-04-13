@@ -3,6 +3,8 @@ import { getResources } from "@/lib/supabase";
 import Dashboard from "@/components/Dashboard";
 import { FadeIn } from "@/components/PageTransition";
 
+export const revalidate = 0;
+
 export default async function Home() {
   const resources = await getResources();
 
