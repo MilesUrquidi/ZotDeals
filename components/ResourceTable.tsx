@@ -23,9 +23,9 @@ export default function ResourceTable({
     <AnimatePresence mode="wait">
       <motion.div
         key={filterKey}
-        initial={{ opacity: 0, y: 18 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ type: "spring", stiffness: 380, damping: 14 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.15 }}
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
       >
         {resources.map((resource) => (
