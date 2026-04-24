@@ -19,15 +19,15 @@ export default async function Home() {
       }}
     >
       {/* Centered hero */}
-      <section className="flex flex-col items-center text-center px-6 pt-16 sm:pt-28 pb-12 sm:pb-16">
+      <section className="flex flex-col items-center text-center px-6 pt-16 sm:pt-28 pb-12 sm:pb-16 overflow-visible">
         <div className="relative w-full max-w-6xl flex flex-col items-center">
           {/* Sticker — top left (gray blue shoes) */}
-          <FadeIn delay={0} className="absolute top-0 left-0 rotate-[-10deg] drop-shadow-lg">
-            <Image src="/peter-gray.png" alt="" width={90} height={90} />
+          <FadeIn delay={0} className="absolute -top-20 left-0 rotate-[-10deg] drop-shadow-lg hidden lg:block">
+            <Image src="/peter-gray.png" alt="" width={130} height={130} />
           </FadeIn>
           {/* Sticker — top right (yellow Peter) */}
-          <FadeIn delay={0.1} className="absolute top-20 right-20 rotate-[15deg] drop-shadow-lg">
-            <Image src="/peter.png" alt="" width={120} height={65} />
+          <FadeIn delay={0.1} className="absolute top-20 right-20 rotate-[15deg] drop-shadow-lg hidden lg:block">
+            <Image src="/peter.png" alt="" width={170} height={92} />
           </FadeIn>
           <FadeIn delay={0}>
             <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 tracking-tight leading-tight max-w-2xl">
@@ -49,7 +49,7 @@ export default async function Home() {
         className="relative max-w-6xl mx-auto px-3 sm:px-6 pb-20"
       >
         {/* Peter straddling the top border of the card */}
-        <div className="absolute -top-30 left-35 z-10 drop-shadow-xl">
+        <div className="absolute -top-30 left-35 z-10 drop-shadow-xl hidden lg:block">
           <Image src="/peter-real.png" alt="" width={120} height={120} />
         </div>
         <div className="rounded-2xl border-4 border-neutral-100 bg-[#FAF9F7] p-3 sm:p-8 shadow-2xl shadow-black/25">
