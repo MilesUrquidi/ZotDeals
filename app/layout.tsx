@@ -12,18 +12,18 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "ZotDeals",
   description:
-    "Every free tool, subscription, and perk available to UCI students — in one place.",
+    "Free stuff and student discounts for UCI students. Every deal your .edu email unlocks — 30+ free tools, subscriptions, and savings all in one place.",
   openGraph: {
     title: "ZotDeals",
     description:
-      "Every free tool, subscription, and perk available to UCI students — in one place.",
+      "Free stuff and student discounts for UCI students. Every deal your .edu email unlocks — 30+ free tools, subscriptions, and savings all in one place.",
     type: "website",
   },
   twitter: {
     card: "summary",
     title: "ZotDeals",
     description:
-      "Every free tool, subscription, and perk available to UCI students — in one place.",
+      "Free stuff and student discounts for UCI students. Every deal your .edu email unlocks — 30+ free tools, subscriptions, and savings all in one place.",
   },
 };
 
