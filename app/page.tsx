@@ -24,7 +24,7 @@ export default async function Home() {
           {/* Sticker — top left (gray blue shoes) */}
           <FadeIn
             delay={0}
-            className="absolute -top-25 left-0 rotate-[-10deg] drop-shadow-lg hidden lg:block"
+            className="absolute -top-25 left-0 rotate--10deg] drop-shadow-lg hidden lg:block"
           >
             <Image src="/peter-gray.png" alt="" width={160} height={160} />
           </FadeIn>
