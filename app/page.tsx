@@ -24,16 +24,16 @@ export default async function Home() {
           {/* Sticker — top left (gray blue shoes) */}
           <FadeIn
             delay={0}
-            className="absolute -top-20 left-0 rotate-[-10deg] drop-shadow-lg hidden lg:block"
+            className="absolute -top-25 left-0 rotate-[-10deg] drop-shadow-lg hidden lg:block"
           >
-            <Image src="/peter-gray.png" alt="" width={130} height={130} />
+            <Image src="/peter-gray.png" alt="" width={160} height={160} />
           </FadeIn>
           {/* Sticker — top right (yellow Peter) */}
           <FadeIn
             delay={0.1}
-            className="absolute top-20 right-20 rotate-[15deg] drop-shadow-lg hidden lg:block"
+            className="absolute top-20 right-15 rotate-15 drop-shadow-lg hidden lg:block"
           >
-            <Image src="/peter.png" alt="" width={170} height={92} />
+            <Image src="/peter.png" alt="" width={220} height={92} />
           </FadeIn>
           <FadeIn delay={0}>
             <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 tracking-tight leading-tight max-w-2xl">
