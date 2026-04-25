@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ZotDeals",
+  title: "ZotDeals — Free Stuff & Deals for UCI Students",
   description:
     "Free stuff and student discounts for UCI students. Every deal your .edu email unlocks — 30+ free tools, subscriptions, and savings all in one place.",
   openGraph: {
