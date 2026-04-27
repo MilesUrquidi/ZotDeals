@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description:
       "Free stuff and student discounts for UCI students. Every deal your .edu email unlocks — 30+ free tools, subscriptions, and savings all in one place.",
     type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 740 }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
