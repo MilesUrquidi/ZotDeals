@@ -28,6 +28,9 @@ export const metadata: Metadata = {
       "The complete list of UCI student discounts, free software, and perks. Everything your .edu email unlocks — 30+ free tools, subscriptions, and savings in one place.",
     images: ["/og-image.webp"],
   },
+  alternates: {
+    canonical: "https://www.zotdeals.me",
+  },
 };
 
 export default function RootLayout({
