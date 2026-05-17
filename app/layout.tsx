@@ -10,21 +10,22 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ZotDeals — Free Stuff & Deals for UCI Students",
+  metadataBase: new URL("https://www.zotdeals.me"),
+  title: "ZotDeals — Free Stuff & Student Discounts for UCI Students",
   description:
-    "Free stuff and student discounts for UCI students. Every deal your .edu email unlocks — 30+ free tools, subscriptions, and savings all in one place.",
+    "The complete list of UCI student discounts, free software, and perks. Everything your .edu email unlocks — 30+ free tools, subscriptions, and savings in one place.",
   openGraph: {
-    title: "ZotDeals — Free Tools & Discounts for UCI Students",
+    title: "ZotDeals — Free Stuff & Student Discounts for UCI Students",
     description:
-      "Free stuff and student discounts for UCI students. Every deal your .edu email unlocks — 30+ free tools, subscriptions, and savings all in one place.",
+      "The complete list of UCI student discounts, free software, and perks. Everything your .edu email unlocks — 30+ free tools, subscriptions, and savings in one place.",
     type: "website",
     images: [{ url: "/og-image.webp", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ZotDeals — Free Tools & Discounts for UCI Students",
+    title: "ZotDeals — Free Stuff & Student Discounts for UCI Students",
     description:
-      "Free stuff and student discounts for UCI students. Every deal your .edu email unlocks — 30+ free tools, subscriptions, and savings all in one place.",
+      "The complete list of UCI student discounts, free software, and perks. Everything your .edu email unlocks — 30+ free tools, subscriptions, and savings in one place.",
     images: ["/og-image.webp"],
   },
 };
@@ -40,6 +41,19 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Analytics />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "ZotDeals",
+              url: "https://www.zotdeals.me",
+              description:
+                "Free stuff and student discounts for UCI students. Every perk your .edu email unlocks in one place.",
+            }),
+          }}
+        />
       </body>
     </html>
   );

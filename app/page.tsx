@@ -42,7 +42,7 @@ export default async function Home() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="mt-6 text-gray-500 text-lg max-w-md leading-relaxed">
-              Free tools, software, and discounts for UCI students <br />
+              Free tools, software, and student discounts for UCI students — <br />
               all in one place.
             </p>
           </FadeIn>
